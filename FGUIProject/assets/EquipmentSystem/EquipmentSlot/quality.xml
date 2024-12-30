@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<component size="100,100">
+  <controller name="c1" pages="0,Common,1,Uncommon,2,Rare,3,Epic,4,Legendary" selected="0"/>
+  <displayList/>
+</component>

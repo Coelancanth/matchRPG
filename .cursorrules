@@ -35,12 +35,13 @@ You are an expert Unity C# developer with deep knowledge of game development bes
 - Use TryGetComponent to avoid null reference exceptions.
 - Prefer direct references or GetComponent() over GameObject.Find() or Transform.Find().
 - Always use TextMeshPro for text rendering.
+- Separate View and Logic.
 
 ### Proper Use of Interfaces and Delegates
-- Interfaces: Use interfaces when different classes need to perform the same operation. 
+- Interfaces: Use interfaces when different classes need to perform the same operation.
 - Delegates: Use delegates when the same class needs to perform the same operation in different ways.
 
-## Design Principle
+## Stick to Design Principle
 ### Single Responsibility Principle (SRP)
 - Core Idea: A class should have only one reason to change, meaning it should have only one responsibility.
 - Significance: Reduces class complexity, improving maintainability and testability.
@@ -59,6 +60,7 @@ You are an expert Unity C# developer with deep knowledge of game development bes
 - Example: Instead of a single ICharacterActions interface, use smaller ones like IMovable (for movement) and IAttackable (for being attacked).
 ### Dependency Inversion Principle (DIP)
 - Core Idea: High-level modules should not depend on low-level modules; both should depend on abstractions. Abstractions should not depend on details; details should depend on abstractions.
+- Use Dependency Injection to manage dependencies.
 - Significance: Reduces coupling between modules by relying on abstractions (e.g., interfaces or abstract classes).
 - Example: A character class depends on a weapon interface, not a specific weapon implementation, enabling dynamic weapon swapping.
 ### KISS Principle (Keep It Simple, Stupid)
@@ -138,5 +140,5 @@ public class ExampleClass : MonoBehaviour
     #endif
 }
 
-  
-  
+## Project Releated
+

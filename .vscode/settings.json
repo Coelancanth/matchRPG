@@ -7,6 +7,10 @@
         "editorBracketHightligh.background3": "#808080",
         "activityBar.background": "#28282B",
         "titleBar.activeBackground": "#343438",
-        "titleBar.activeForeground": "#FBFBFB"
+        "titleBar.activeForeground": "#FBFBFB",
+        "files.exclude": {
+            "**/*.meta": true,
+            "**/*.md.meta": true
+        }
     }
 }

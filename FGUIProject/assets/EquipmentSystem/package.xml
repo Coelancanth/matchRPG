@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<packageDescription id="vnldmfsh">
+  <resources>
+    <component id="hdrb2" name="EquipmentSlot.xml" path="/EquipmentSlot/"/>
+    <component id="hdrb3" name="QualityBg.xml" path="/EquipmentSlot/"/>
+    <component id="hdrb4" name="Icon.xml" path="/EquipmentSlot/"/>
+    <component id="hdrb5" name="quality.xml" path="/EquipmentSlot/"/>
+  </resources>
+  <publish name=""/>
+</packageDescription>

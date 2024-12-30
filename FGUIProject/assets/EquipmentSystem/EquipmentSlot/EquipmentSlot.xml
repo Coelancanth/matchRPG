@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<component size="100,100">
+  <displayList>
+    <component id="n0_hdrb" name="n0" src="hdrb3" fileName="EquipmentSlot/QualityBg.xml" xy="0,0"/>
+    <component id="n1_hdrb" name="n1" src="hdrb4" fileName="EquipmentSlot/Icon.xml" xy="0,0"/>
+    <component id="n2_hdrb" name="n2" src="hdrb5" fileName="EquipmentSlot/quality.xml" xy="-1,-14"/>
+  </displayList>
+</component>
