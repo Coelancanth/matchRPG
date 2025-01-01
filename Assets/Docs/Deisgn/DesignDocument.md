@@ -9,16 +9,22 @@
 - 属性是darklands的那种可以通过使用来提升的属性
 - 中世纪暖暖！先不考虑别的！
 - 参考的游戏
-    - 重点：Inawoods
+    - 重点：Neo Scavenger
+    - Neo Scavenger的场景交互系统！（有没有想到Card Survival？！）
+    - 本质：结合Neo Scanvenger和Battle Brothers
     - 《天国：拯救》
     - 《战场兄弟》- Legend Mod
     - 《骑马与砍杀》
     - Neoscavenger
     - Heads will roll
     - Darklands
-    - Plague Lords
-    
+    - Exanima的数据
+    - Wartales
 
+# 部分思路
+## 装备系统
+- 首先实现最基本的装备系统
+- 在实现了前面的基础上，实现NeoScavenger/ Kenshi那样的，占据格子的背包系统
 
 
 

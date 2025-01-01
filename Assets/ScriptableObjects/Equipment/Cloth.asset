@@ -1,0 +1,35 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3dc0532838134a8439cf0e610f8b2c91, type: 3}
+  m_Name: Cloth
+  m_EditorClassIdentifier: 
+  m_GroupID: 
+  m_SubGroupID: 
+  m_Name: 
+  m_Description: 
+  m_AltDescription: 
+  m_Icons: []
+  m_Weight: 0
+  m_Value: 0
+  m_Durability: 0
+  m_DegradePerUse: 0
+  m_DegradeTreasureID: 
+  m_EquipConditions: []
+  m_PossessConditions: []
+  m_UseConditions: []
+  m_Capacities: []
+  m_EquipSlots: []
+  m_IsLocked: 0
+  m_IsStackable: 0
+  m_StackSize: 1
+  m_SlotDepth: 1
+  m_Components: []

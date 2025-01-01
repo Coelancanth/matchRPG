@@ -12,5 +12,16 @@
             "**/*.meta": true,
             "**/*.md.meta": true
         }
-    }
+    },
+    "apc.stylesheet": {
+      // Output text
+      ".anysphere-markdown-container-root": "font-size: 15px;",
+      // User input text
+      ".full-input-box": "font-size: 15px;",
+      ".aislash-editor-input-readonly": "font-size: 15px !important;",
+      // The header in the output code block
+      ".markdown-code-block-header": "font-size: 15px;",
+      // The code in the code block
+      ".markdown-section .view-lines": "font-size: 15px !important;"
+    },
 }
