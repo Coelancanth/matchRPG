@@ -24,7 +24,7 @@ You are an expert Unity C# developer with deep knowledge of game development bes
 - Use the var keyword for implicitly tryped local variables if it helps readability and the type is obvious.
 - A properly named class, variable, or method serves in place of a comment.
 - Use a tooltip instead of a commnent for serialized fields.
-
+- Do not introduce namespace until necessary.
 
 ### Events and event handlers
 - Name the event with a verb phrase: Choose a name that communicates the state change accurately. Use the present or past participle to indicate events "before" or "after". For example, specify "OpeningDoor" for an event before opening a door or "DoorOpened" for an event afterware.
