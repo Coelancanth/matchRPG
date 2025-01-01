@@ -28,63 +28,64 @@ graph TB
         ID -->|creates| Model
         IO -->|contains| Model
     end
-```
 
-### Data Flow
-```mermaid
-sequenceDiagram
-    participant Game
-    participant IM as ItemManager
-    participant ID as ItemDefinition
-    participant IO as ItemObject
-    participant IC as IItemComponent
-
-    Game->>IM: CreateItem(definitionId)
-    IM->>ID: GetDefinition(id)
-    ID->>Model: CreateModel()
-    IM->>IO: Instantiate
-    IO->>Model: Initialize(model)
-    loop For each component
-        IM->>IC: CreateComponent(data)
-        IO->>IC: AddComponent(component)
+    subgraph Editor
+        IDE[ItemDefinitionEditor]
+        IDE -->|customizes| ID
+        IDE -->|manages| CD[ComponentDefinitions]
+        CD -->|creates| IC
     end
 ```
 
-### Component Hierarchy
+### Component System
 ```mermaid
 classDiagram
-    class IItemComponent {
-        <<interface>>
-        +ItemComponentType Type
-        +Execute(ItemObject)
+    class ItemDefinition {
+        -List~ItemComponentDefinition~ _components
+        +CreateModel()
     }
 
-    class IWeaponComponent {
-        <<interface>>
-        +float BaseDamage
-        +float AttackSpeed
-        +float Range
-        +float Attack(GameObject)
+    class ItemComponentDefinition {
+        #ItemComponentType _componentType
+        +CreateComponent()*
     }
 
-    class IArmorComponent {
-        <<interface>>
-        +float BaseArmor
-        +float MovementSpeedModifier
-        +float CalculateDamageReduction(float, DamageType)
+    class WeaponComponentDefinition {
+        -float _baseDamage
+        -float _attackSpeed
+        +CreateComponent()
     }
 
-    class IConsumableComponent {
-        <<interface>>
-        +int RemainingUses
-        +float ConsumptionTime
-        +bool Consume()
-        +bool CanConsume(out string)
+    class ArmorComponentDefinition {
+        -float _baseArmor
+        -float _movementSpeedModifier
+        +CreateComponent()
     }
 
-    IItemComponent <|-- IWeaponComponent
-    IItemComponent <|-- IArmorComponent
-    IItemComponent <|-- IConsumableComponent
+    class ItemDefinitionEditor {
+        -Dictionary~string,Type~ ComponentTypes
+        +OnInspectorGUI()
+    }
+
+    ItemDefinition *-- ItemComponentDefinition
+    ItemComponentDefinition <|-- WeaponComponentDefinition
+    ItemComponentDefinition <|-- ArmorComponentDefinition
+    ItemDefinitionEditor ..> ItemDefinition : edits
+```
+
+### Editor Workflow
+```mermaid
+sequenceDiagram
+    participant User
+    participant Editor as ItemDefinitionEditor
+    participant Definition as ItemDefinition
+    participant Component as ComponentDefinition
+
+    User->>Editor: Click "Add Component" button
+    Editor->>Component: Create new instance
+    Component->>Component: Initialize default values
+    Editor->>Definition: Add to components list
+    Definition->>Editor: Refresh Inspector view
 ```
 
 ### Folder Structure
@@ -98,9 +99,11 @@ graph TD
     Items --> Interfaces[Interfaces/]
     Items --> Models[Models/]
     Items --> Data[Data/]
+    Items --> Editor[Editor/]
 
     Components -->|contains| CC[Component Implementations]
     Interfaces -->|contains| IC[Component Interfaces]
     Models -->|contains| MC[Data Models]
-    Data -->|contains| DC[ScriptableObjects]
+    Data -->|contains| DC[Component Definitions]
+    Editor -->|contains| EC[Custom Editors]
 ```

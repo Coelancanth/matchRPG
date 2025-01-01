@@ -72,3 +72,75 @@ classDiagram
 - Changed item capacities from List<string> to Vector2Int for grid-based inventory
 - Implemented builder pattern for ItemModel construction
 - Added validation for item definitions in Unity Inspector
+
+# [0.1.1] 2025-01-02 01:46:58
+
+## Overview
+Improved the item component system with a custom editor interface and better naming conventions, making it more intuitive and maintainable.
+
+## Adjustments and Refactoring
+### Component System Improvements
+- Implemented custom editor for ItemDefinition
+- Added direct component adding through Inspector buttons
+- Updated naming convention for better consistency
+- Simplified component definitions
+
+```mermaid
+classDiagram
+    class ItemDefinitionEditor {
+        -Dictionary~string,Type~ ComponentTypes
+        +OnInspectorGUI()
+    }
+
+    class ItemComponentDefinition {
+        #ItemComponentType _componentType
+        +ComponentType
+        +CreateComponent()*
+    }
+
+    class WeaponComponentDefinition {
+        -float _baseDamage
+        -float _attackSpeed
+        -float _range
+        -DamageType _damageType
+        +CreateComponent()
+    }
+
+    class ArmorComponentDefinition {
+        -float _baseArmor
+        -float _movementSpeedModifier
+        -DamageResistance[] _damageResistances
+        +CreateComponent()
+    }
+
+    ItemDefinitionEditor ..> ItemComponentDefinition : creates
+    ItemComponentDefinition <|-- WeaponComponentDefinition
+    ItemComponentDefinition <|-- ArmorComponentDefinition
+```
+
+### Editor Workflow
+```mermaid
+sequenceDiagram
+    participant User
+    participant Editor as ItemDefinitionEditor
+    participant Definition as ItemDefinition
+    participant Component as ComponentDefinition
+
+    User->>Editor: Click "Add Component" button
+    Editor->>Component: Create new instance
+    Component->>Component: Initialize default values
+    Editor->>Definition: Add to components list
+    Definition->>Editor: Refresh Inspector view
+```
+
+### Component Structure
+```mermaid
+graph TD
+    A[ItemDefinition] -->|contains| B[Components List]
+    B -->|can add| C[WeaponComponent]
+    B -->|can add| D[ArmorComponent]
+    E[Custom Editor] -->|manages| B
+    E -->|provides UI for| F[Add Component]
+    F -->|creates| C
+    F -->|creates| D
+```

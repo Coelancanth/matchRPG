@@ -108,12 +108,15 @@ namespace Core.Items
             item.Initialize(definition.CreateModel());
 
             // Add components based on definition
-            foreach (var componentData in definition.Components)
+            foreach (var componentDefinition in definition.Components)
             {
-                var component = CreateComponent(componentData);
-                if (component != null)
+                if (componentDefinition != null)
                 {
-                    item.AddComponent(component);
+                    var component = componentDefinition.CreateComponent();
+                    if (component != null)
+                    {
+                        item.AddComponent(component);
+                    }
                 }
             }
 
@@ -160,13 +163,6 @@ namespace Core.Items
                 }
                 m_ItemDefinitionMap.Add(id, definition);
             }
-        }
-
-        private Interfaces.IItemComponent CreateComponent(ItemComponentData componentData)
-        {
-            // TODO: Implement component creation based on type and data
-            // This will need to be expanded as more component types are added
-            return null;
         }
         #endregion
     }

@@ -12,24 +12,27 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3dc0532838134a8439cf0e610f8b2c91, type: 3}
   m_Name: Cloth
   m_EditorClassIdentifier: 
-  m_GroupID: 
-  m_SubGroupID: 
-  m_Name: 
-  m_Description: 
-  m_AltDescription: 
-  m_Icons: []
-  m_Weight: 0
-  m_Value: 0
-  m_Durability: 0
-  m_DegradePerUse: 0
-  m_DegradeTreasureID: 
-  m_EquipConditions: []
-  m_PossessConditions: []
-  m_UseConditions: []
-  m_Capacities: []
-  m_EquipSlots: []
-  m_IsLocked: 0
-  m_IsStackable: 0
-  m_StackSize: 1
-  m_SlotDepth: 1
-  m_Components: []
+  _groupId: 
+  _subGroupId: 
+  _itemName: 
+  _description: 
+  _altDescription: 
+  _icons: []
+  _weight: 0
+  _value: 0
+  _durability: 0
+  _degradePerUse: 0
+  _degradeTreasureId: 
+  _equipConditions: []
+  _possessConditions: []
+  _useConditions: []
+  _capacities: {x: 0, y: 0}
+  _equipSlots: []
+  _isLocked: 0
+  _isStackable: 0
+  _stackSize: 1
+  _slotDepth: 1
+  _components: []
+  references:
+    version: 2
+    RefIds: []
